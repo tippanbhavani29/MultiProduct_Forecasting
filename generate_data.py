@@ -4,7 +4,8 @@ import numpy as np
 def generate_data():
     np.random.seed(42)
 
-    dates = pd.date_range(start="2023-01-01", end="2024-01-01")
+    dates = pd.date_range("2024-01-01", "2025-12-31")
+
     products = ["Product_A", "Product_B", "Product_C"]
 
     rows = []
