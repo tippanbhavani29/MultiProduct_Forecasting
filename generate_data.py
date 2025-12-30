@@ -4,10 +4,14 @@ import numpy as np
 def generate_data():
     np.random.seed(42)
 
-    dates = pd.date_range("2024-01-01", "2025-12-31")
+    # Historical data ends at Dec 2025
+    dates = pd.date_range(
+        start="2024-01-01",
+        end="2025-12-31",
+        freq="D"
+    )
 
     products = ["Product_A", "Product_B", "Product_C"]
-
     rows = []
 
     for product in products:
@@ -21,6 +25,4 @@ def generate_data():
         for d, s in zip(dates, sales):
             rows.append([d, product, max(10, int(s))])
 
-    # ✅ ONLY return DataFrame — NO FILE I/O
-    return  pd.DataFrame(rows, columns=["date", "product", "sales"])
-
+    return pd.DataFrame(rows, columns=["date", "product", "sales"])
