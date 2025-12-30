@@ -21,4 +21,5 @@ def generate_data():
             rows.append([d, product, max(10, int(s))])
 
     # ✅ ONLY return DataFrame — NO FILE I/O
-    return pd.DataFra
+    return  pd.DataFrame(rows, columns=["date", "product", "sales"])
+
